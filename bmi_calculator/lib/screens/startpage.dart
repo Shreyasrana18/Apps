@@ -58,7 +58,8 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      appBar: AppBar(title: Text('WELCOME PAGE'),),
+      backgroundColor: Color(0xFF2E2E2E),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(15.0),
@@ -79,7 +80,7 @@ class _StartPageState extends State<StartPage> {
               ),
               SizedBox(
                 height: 10.0,
-                width: 150.0,
+                width: 200.0,
                 child: Divider(
                   color: Colors.teal.shade100,
                 ),
@@ -90,9 +91,9 @@ class _StartPageState extends State<StartPage> {
               FlatButton(
                 minWidth: 200,
                 textColor: Colors.white,
-                color: Color(0xFF01937C),
+                color: Color(0xFF1976D2),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
                     'CALCULATE',
                     textAlign: TextAlign.center,
@@ -112,9 +113,9 @@ class _StartPageState extends State<StartPage> {
               FlatButton(
                 minWidth: 200,
                 textColor: Colors.white,
-                color: Color(0xFF01937C),
+                color: Color(0xFF1976D2),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
                     'VIEW  BMI',
                     textAlign: TextAlign.center,
@@ -134,9 +135,9 @@ class _StartPageState extends State<StartPage> {
               FlatButton(
                 minWidth: 200,
                 textColor: Colors.white,
-                color: Color(0xFF01937C),
+                color: Color(0xFF1976D2),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
                     'LOGOUT',
                     textAlign: TextAlign.center,

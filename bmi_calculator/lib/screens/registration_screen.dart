@@ -17,7 +17,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('REGISTRATION PAGE'),
+      ),
+      backgroundColor: Color(0xFF2E2E2E),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -27,22 +30,23 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Hero(
               tag: 'logo',
               child: Container(
-                height: 200.0,
-                child: Image.asset('images/logo.png'),
+                height: 150.0,
+                child: Image.asset('images/logo.jpeg'),
               ),
             ),
             SizedBox(
-              height: 48.0,
+              height: 40.0,
             ),
             TextField(
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
               onChanged: (value) {
                 email = value;
               },
               decoration: InputDecoration(
-                hintText: 'Enter your email',
+                labelStyle: TextStyle(color: Colors.white),
+                labelText: 'Enter your email',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -62,14 +66,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 8.0,
             ),
             TextField(
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
               obscureText: true,
               textAlign: TextAlign.center,
               onChanged: (value) {
                 password = value;
               },
               decoration: InputDecoration(
-                hintText: 'Enter your password',
+                labelStyle: TextStyle(color: Colors.white),
+                labelText: 'Enter your password',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -99,7 +104,23 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Navigator.pushNamed(context, StartPage.id);
                   }
                 } catch (e) {
-                  print(e);
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text("An error occured"),
+                          content: Text("$e"),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("OK"))
+                          ],
+                        );
+                      });
+                } finally {
+                  setState(() {});
                 }
               },
             ),

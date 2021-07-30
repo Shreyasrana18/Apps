@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'login_screen.dart';
 import 'registration_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,7 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
-   AnimationController controller;
+  AnimationController controller;
   @override
   void initState() {
     super.initState();
@@ -28,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF2E2E2E),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -40,16 +42,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('images/logo.jpeg'),
                     height: 60.0,
                   ),
                 ),
-                Text(
-                  'WEIGHTER APP',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w900,
+                SizedBox(width: 10.0),
+                Center(
+                  child: Text(
+                    'BMI-APPLICATION',
+                    style: TextStyle(
+                      color: Colors.white60,
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
               ],
@@ -59,14 +64,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               title: 'Log In',
-              colour: Colors.lightBlueAccent,
+              colour: Color(0xFF303F9F),
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
             RoundedButton(
               title: 'Register',
-              colour: Colors.lightBlueAccent,
+              colour: Color(0xFF303F9F),
               onPressed: () {
                 Navigator.pushNamed(context, RegistrationScreen.id);
               },
@@ -77,5 +82,3 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
   }
 }
-
-
