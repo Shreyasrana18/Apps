@@ -1,7 +1,13 @@
 import 'dart:math';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 class CalculatorBrain {
   CalculatorBrain({this.height, this.weight});
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
+  User loggedInUser;
 
   final int height;
   final int weight;
@@ -10,6 +16,15 @@ class CalculatorBrain {
 
   String calculateBMI() {
     _bmi = weight / pow(height / 100, 2);
+    final now = new DateTime.now();
+    DateFormat dateFormat = DateFormat("yyyy-MM-dd");
+    String formatter = dateFormat.format(now);
+
+    _firestore.collection('bmi_record').add({
+      'bmi': _bmi,
+      'uid': _auth.currentUser.uid,
+      'date': formatter,
+    });
     return _bmi.toStringAsFixed(1);
   }
 

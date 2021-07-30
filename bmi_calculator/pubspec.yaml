@@ -12,6 +12,10 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^9.1.0
+  firebase_core: ^1.4.0
+  firebase_auth: ^3.0.1
+  cloud_firestore: ^2.4.0
+ 
   
    
 
@@ -21,3 +25,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+     - images/logo.png

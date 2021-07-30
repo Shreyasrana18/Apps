@@ -1,9 +1,11 @@
+import 'package:bmi_calculator/screens/startpage.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../components/reusable_card.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  static const String id = 'results_page';
   ResultsPage(
       {@required this.bmiResult,
       @required this.interpretation,
@@ -54,9 +56,9 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
             BottomButton(
-              buttonTitle: 'RE-CALCULATE',
+              title: 'Home Screen',
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, StartPage.id);
               },
             )
           ],

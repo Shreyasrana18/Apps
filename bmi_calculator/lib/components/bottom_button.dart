@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class BottomButton extends StatelessWidget {
-  BottomButton({@required this.onTap, @required this.buttonTitle});
+  BottomButton({@required this.onTap,   this.title});
+  final String title;
   final Function onTap;
-  final String buttonTitle;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class BottomButton extends StatelessWidget {
       child: Container(
         child: Center(
           child: Text(
-            'CALCULATE',
+            title,
             style: LargeButtonTextStyle,
           ),
         ),
