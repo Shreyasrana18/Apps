@@ -14,7 +14,7 @@ class _ViewBmiState extends State<ViewBmi> {
   final _auth = FirebaseAuth.instance;
   User loggedInUser;
   List Bmi = [];
-  List date= [];
+  List date = [];
 
   void getCurrentUser() {
     try {
@@ -65,7 +65,6 @@ class _ViewBmiState extends State<ViewBmi> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.teal.shade500,
       ),
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(

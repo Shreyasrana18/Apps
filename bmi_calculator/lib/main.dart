@@ -30,6 +30,7 @@ class BMICalculator extends StatelessWidget {
         ResultsPage.id: (context) => ResultsPage(),
         ViewBmi.id: (context) => ViewBmi(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
